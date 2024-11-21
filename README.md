@@ -14,6 +14,22 @@ $ npm install --save @oncehub/markdown-safe
 
 ## Usage
 
+```ts
+import { renderMarkdown } from "@oncehub/markdown-safe";
+
+const markdown = `
+
+# This is a heading
+
+This is some **bold** text, and here's a [link](https://example.com).
+`;
+
+const safeHtml = renderMarkdown(markdown);
+
+// Now you can use 'safeHtml' (e.g., set it as the innerHTML of an element)
+console.log(safeHtml);
+```
+
 ## Development
 
 ### Tests
