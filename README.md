@@ -1,6 +1,6 @@
-# markdown
+# markdown-safe
 
-[![Build status](https://github.com/scheduleonce/markdown/actions/workflows/node.js.yml/badge.svg)](https://github.com/scheduleonce/markdown/actions) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Build status](https://github.com/scheduleonce/markdown-safe/actions/workflows/node.js.yml/badge.svg)](https://github.com/scheduleonce/markdown-safe/actions) [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 > Thin wrapper for markdown parsing and output sanitization
 
@@ -9,10 +9,26 @@
 To install this module, run the following command:
 
 ```sh
-$ npm install --save @oncehub/markdown
+$ npm install --save @oncehub/markdown-safe
 ```
 
 ## Usage
+
+```ts
+import { renderMarkdown } from "@oncehub/markdown-safe";
+
+const markdown = `
+
+# This is a heading
+
+This is some **bold** text, and here's a [link](https://example.com).
+`;
+
+const safeHtml = renderMarkdown(markdown);
+
+// Now you can use 'safeHtml' (e.g., set it as the innerHTML of an element)
+console.log(safeHtml);
+```
 
 ## Development
 
