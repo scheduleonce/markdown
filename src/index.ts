@@ -1,4 +1,4 @@
-import { micromark } from 'micromark';
+import { micromark } from "micromark";
 
 /**
  * Converts Markdown to safe HTML.
@@ -7,7 +7,7 @@ import { micromark } from 'micromark';
  * @returns {string} - Safe HTML string.
  */
 export function renderMarkdown(markdown: string): string {
-  let rawHtml = micromark(markdown);
+  const rawHtml = micromark(markdown);
   const mdHtml = rawHtml.replace(/<a\s([^>]*?)>/g, '<a target="_blank" $1>');
 
   return mdHtml;
